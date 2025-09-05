@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UCIG Group</title>
+  <style>
+    :root {
+      --bg: #0d0d12;
+      --accent-ucig: #00eaff;
+      --accent-tutor: #ff6ec7;
+      --text: #ffffff;
+      --glass: rgba(255, 255, 255, 0.08);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    /* Hero */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .aurora {
+      position: absolute;
+      inset: -50%;
+      background: conic-gradient(from 0deg,
+        #00eaff44,
+        #ff6ec744,
+        #9b5eff44,
+        #00eaff44);
+      filter: blur(120px);
+      animation: spin 30s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .hero h1 {
+      font-size: 3.8rem;
+      background: linear-gradient(90deg,var(--accent-ucig),#9b5eff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      z-index: 1;
+    }
+    nav {
+      position: fixed;
+      top: 1rem;
+      right: 2rem;
+      display: flex;
+      gap: 1.2rem;
+      z-index: 10;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--accent-ucig); }
+
+    /* Sections */
+    section {
+      max-width: 1000px;
+      margin: 6rem auto;
+      padding: 2.5rem;
+      border-radius: 18px;
+      background: var(--glass);
+      backdrop-filter: blur(20px) saturate(140%);
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent-ucig);
+    }
+    section p, section li {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    ul { margin-top: 1rem; padding-left: 1rem; }
+
+    /* Split cards */
+    .split {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    }
+    .card {
+      padding: 1.5rem;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: transform 0.3s, border 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-ucig);
+    }
+
+    /* Tutoring section tweaks */
+    #tutoring h2 { color: var(--accent-tutor); }
+    .pricing {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    }
+    .price-card {
+      padding: 1.5rem;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .price-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px var(--accent-tutor);
+    }
+    .price-card strong { color: var(--accent-tutor); }
+
+    /* WhatsApp */
+    .whatsapp {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 30px;
+      background: #25D366;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .whatsapp:hover { background: #128C7E; transform: scale(1.05); }
+
+    iframe {
+      margin-top: 1.5rem;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <div class="hero">
+    <div class="aurora"></div>
+    <h1>UCIG Group</h1>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#ucig">UCIG</a>
+    <a href="#tutoring">Tutoring</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- UCIG Section -->
+  <section id="ucig" data-animate>
+    <h2>About UCIG Group</h2>
+    <p>
+      UCIG GROUP is a data analytics consulting service dedicated to helping organizations 
+      make informed, evidence-based decisions. We specialize in turning raw data into actionable 
+      insights through advanced statistical analysis, data visualization, and business intelligence solutions.
+    </p>
+
+    <h3 style="color:var(--accent-ucig); margin-top:2rem;">What We’re About</h3>
+    <p>
+      UCIG exists to bridge the gap between complex data and real-world strategy. 
+      Our mission is to empower leaders, businesses, and institutions with accurate 
+      insights so they can make smarter, faster, and more sustainable decisions.
+    </p>
+
+    <div class="split" style="margin-top:2rem;">
+      <div class="card">
+        <h3>Core Services</h3>
+        <ul>
+          <li>Data Analysis & Insights</li>
+          <li>Business Intelligence Dashboards</li>
+          <li>Survey Design & Analysis</li>
+          <li>Statistical Modeling & Forecasting</li>
+          <li>Data Cleaning & Automation</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Core Competencies</h3>
+        <ul>
+          <li>Expertise in SAS, R, Python, SQL, Power BI, Tableau</li>
+          <li>Strong statistical background</li>
+          <li>Clear communication to stakeholders</li>
+          <li>Government & corporate datasets</li>
+          <li>Turning data into growth strategies</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:2.5rem; border:2px solid var(--accent-ucig);">
+      <h3 style="color:var(--accent-ucig);">🎯 Target Market</h3>
+      <ul>
+        <li>Government institutions & policy makers</li>
+        <li>Small and medium enterprises (SMEs)</li>
+        <li>Corporates & financial institutions</li>
+        <li>NGOs, research & development organizations</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Tutoring Section (secondary at bottom) -->
+  <section id="tutoring" data-animate>
+    <h2>Greater Heights Maths Tutoring</h2>
+    <p>
+      A separate education service run under the UCIG umbrella, focused on empowering students 
+      through high-quality Maths tutoring from Grade 4 to Grade 12.
+    </p>
+    <div class="pricing">
+      <div class="price-card">
+        <p><strong>Primary (Grade 4–7):</strong> R1000 per month – fundamentals, problem-solving, and exam prep.</p>
+      </div>
+      <div class="price-card">
+        <p><strong>High School (Grade 8–12):</strong> R1500 per month – advanced topics, test readiness, and study skills.</p>
+      </div>
+    </div>
+    <h3 style="margin-top:2rem;">What We Cover</h3>
+    <ul>
+      <li>Algebra</li>
+      <li>Geometry</li>
+      <li>Trigonometry</li>
+      <li>Statistics & Probability</li>
+      <li>Functions & Graphs</li>
+      <li>Number Patterns & Sequences</li>
+      <li>Exam Preparation & Study Skills</li>
+    </ul>
+    <div style="text-align:center; margin-top:2.5rem;">
+      <h3 style="margin-bottom:1rem; color:var(--accent-tutor);">Sign Up</h3>
+      <iframe src="https://forms.gle/PqT8o3KjXYtVjSNe6"
+        width="100%" height="500" frameborder="0">Loading…</iframe>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" data-animate>
+    <h2>Contact Us</h2>
+    <p>Email: yolandanqweniso@gmail.com</p>
+    <p>Phone: 082 899 1153</p>
+    <a class="whatsapp" href="https://wa.me/27828991153" target="_blank">📲 WhatsApp Us</a>
+  </section>
+
+  <script>
+    // Scroll animations
+    const sections = document.querySelectorAll("[data-animate]");
+    const revealOnScroll = () => {
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          sec.classList.add("visible");
+        }
+      });
+    };
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  </script>
+</body>
+</html>
